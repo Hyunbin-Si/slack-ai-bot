@@ -300,20 +300,21 @@
     ============================================================ */
     .qna-container { width:100%; display:flex; flex-direction:column; overflow:hidden; }
 
-    /* QnA 타이틀 축소 (더 많은 콘텐츠 노출) */
+    /* QnA 슬라이드 전용 — 제목/여백 최소화해서 카드 공간 확보 */
+    .qna-slide .slide-content { justify-content: flex-start; padding: 3vh 5vw 2vh; }
     .theme-dark-neon.qna-slide .s-title,
-    .theme-dark-amber.qna-slide .s-title { font-size: clamp(28px,3.5vw,52px) !important; margin-bottom:1.2vh !important; }
+    .theme-dark-amber.qna-slide .s-title { font-size: clamp(18px,2vw,28px) !important; margin-bottom:0.4vh !important; }
     .theme-dark-neon.qna-slide .s-tag,
-    .theme-dark-amber.qna-slide .s-tag   { margin-bottom:1vh !important; }
+    .theme-dark-amber.qna-slide .s-tag   { margin-bottom:0.5vh !important; font-size:clamp(9px,0.85vw,11px) !important; padding:3px 10px !important; }
     .theme-dark-neon.qna-slide .s-divider,
-    .theme-dark-amber.qna-slide .s-divider { margin-bottom:1.5vh !important; }
+    .theme-dark-amber.qna-slide .s-divider { margin-bottom:0.8vh !important; height:2px !important; }
 
     /* 통계 줄 */
-    .qna-stats { display:flex; align-items:center; gap:clamp(16px,3vw,48px); margin-bottom:2vh; flex-wrap:wrap; }
-    .qna-stat  { display:flex; flex-direction:column; gap:2px; }
+    .qna-stats { display:flex; align-items:center; gap:clamp(12px,2vw,32px); margin-bottom:1vh; flex-wrap:wrap; }
+    .qna-stat  { display:flex; flex-direction:column; gap:1px; }
     .qna-stat-val {
       font-family: var(--font-display);
-      font-size: clamp(30px,4vw,62px); line-height:1;
+      font-size: clamp(20px,2.5vw,38px); line-height:1;
       color: var(--accent);
     }
     .qna-stat-val.wait { color:#F4A261; }
@@ -322,22 +323,22 @@
     .qna-stat-label { font-size:clamp(9px,0.8vw,11px); font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:rgba(30,58,95,.5); }
     .qna-stat-sep   { width:1px; height:clamp(24px,3.5vh,44px); background:rgba(126,200,227,.25); align-self:center; }
 
-    /* 카드 그리드 */
-    .qna-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(6px,1vh,12px) clamp(8px,1.2vw,18px); width:100%; }
+    /* 카드 그리드 — 4열 × 3행 = 12개 */
+    .qna-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(4px,0.6vh,8px) clamp(5px,0.7vw,10px); width:100%; }
     .qna-card {
       background:#FFFFFF; border:1px solid rgba(126,200,227,.25);
-      border-radius:10px; padding:clamp(8px,1.2vh,14px) clamp(10px,1vw,16px);
-      display:flex; flex-direction:column; gap:5px; min-width:0;
+      border-radius:8px; padding:clamp(6px,0.8vh,10px) clamp(8px,0.7vw,12px);
+      display:flex; flex-direction:column; gap:3px; min-width:0;
       box-shadow: 0 2px 10px rgba(126,200,227,0.1);
     }
-    .qna-card-top { display:flex; align-items:center; gap:5px; flex-wrap:wrap; }
-    .qna-badge { font-size:clamp(9px,.75vw,11px); font-weight:600; padding:2px 8px; border-radius:20px; white-space:nowrap; }
+    .qna-card-top { display:flex; align-items:center; gap:4px; flex-wrap:wrap; }
+    .qna-badge { font-size:clamp(8px,.6vw,10px); font-weight:600; padding:2px 7px; border-radius:20px; white-space:nowrap; }
     .qna-badge-cat  { background:rgba(126,200,227,.15); color:#3A8BAD; border:1px solid rgba(126,200,227,.3); }
     .qna-badge-wait { background:rgba(244,162,97,.12);  color:#D4762A; border:1px solid rgba(244,162,97,.3); }
     .qna-badge-proc { background:rgba(90,175,200,.12);  color:#3A8BAD; border:1px solid rgba(90,175,200,.3); }
     .qna-badge-done { background:rgba(247,168,196,.15); color:#C05A7E; border:1px solid rgba(247,168,196,.35); }
-    .qna-card-q   { font-size:clamp(11px,1vw,14px); font-weight:600; line-height:1.55; color:#1E3A5F; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; word-break:keep-all; }
-    .qna-card-ans { font-size:clamp(10px,.82vw,12px); color:rgba(30,58,95,.5); line-height:1.5; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; font-style:italic; word-break:keep-all; }
+    .qna-card-q   { font-size:clamp(10px,.8vw,12px); font-weight:600; line-height:1.45; color:#1E3A5F; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; word-break:keep-all; }
+    .qna-card-ans { font-size:clamp(9px,.68vw,11px); color:rgba(30,58,95,.5); line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; font-style:italic; word-break:keep-all; }
 
     /* 상세 테이블 */
     .qna-table-wrap { width:100%; overflow:hidden; border-radius:10px; border:1px solid rgba(126,200,227,.2); margin-top:1.5vh; box-shadow:0 2px 12px rgba(126,200,227,.1); }
@@ -1131,8 +1132,8 @@ const QNA = {
   // ③ 상태 텍스트 (시트 입력값과 정확히 일치)
   ST: { WAIT:'대기', PROC:'진행중', DONE:'완료' },
 
-  // ④ 대시보드에 표시할 카드 수 (최대 6)
-  CARD_LIMIT: 6,
+  // ④ 대시보드에 표시할 카드 수 (최대 12)
+  CARD_LIMIT: 12,
 
   // ⑤ 자동 새로고침 간격 (ms)
   REFRESH_MS: 5 * 60 * 1000,
@@ -1140,13 +1141,18 @@ const QNA = {
 
 /* ── QnA 샘플 데이터 (로컬 미리보기용 / fetch 실패 시 표시) ── */
 const QNA_SAMPLE = [
-  // [접수일, 카테고리, 질문, 키워드, 진행상황, 답변]
   ['2026/04/01', '조직문화', '안심톡 질문은 누가 보나요?', '익명,안심톡', '완료', '피플팀만 확인하며 익명성은 완전히 보장됩니다'],
   ['2026/04/02', 'HR', '연차는 언제부터 사용할 수 있나요?', '연차,휴가', '완료', '입사 1개월 후부터 월 1일씩 발생합니다'],
   ['2026/04/03', '조직문화', '랜덤런치 참여는 필수인가요?', '랜덤런치', '진행중', ''],
   ['2026/04/05', '업무방식', '코어워킹 시간에 급한 슬랙은 어떻게 하나요?', '코어워킹,슬랙', '대기', ''],
   ['2026/04/06', 'HR', '재택근무 기준이 있나요?', '재택', '대기', ''],
   ['2026/04/07', '조직문화', '핵심가치 외에 추가로 강조되는 문화가 있나요?', '핵심가치,문화', '진행중', ''],
+  ['2026/04/08', '업무방식', '회의 시간 단축을 위한 가이드가 있나요?', '회의,효율', '진행중', ''],
+  ['2026/04/09', 'HR', '경조사 지원 기준이 어떻게 되나요?', '경조사,복지', '완료', '경조사 종류별 지원 기준은 HR 노션 페이지를 참고해 주세요'],
+  ['2026/04/10', '조직문화', '신입 온보딩 프로그램이 있나요?', '온보딩,신입', '완료', '입사 첫 2주간 버디 프로그램과 팀별 온보딩이 진행됩니다'],
+  ['2026/04/11', '업무방식', '업무 툴 교육은 어떻게 받을 수 있나요?', '툴,교육', '대기', ''],
+  ['2026/04/12', 'HR', '성과 평가 주기는 어떻게 되나요?', '평가,성과', '진행중', ''],
+  ['2026/04/13', '조직문화', '팀 간 협업 채널은 어떻게 운영되나요?', '협업,슬랙', '대기', ''],
 ];
 
 /* ── QnA 전역 데이터 ── */
@@ -1248,12 +1254,20 @@ function buildDashboardHTML(rows) {
       </div>
     </div>`;
 
-  // 완료 → 진행중 → 대기 순, 각 그룹 내 최신순
-  const rev = arr => [...arr].reverse();
+  // 1순위: 진행중(최신순) → 2순위: 대기(최신순) → 3순위: 완료(최신순)
+  const sortByDateDesc = arr => [...arr].sort((a,b) => {
+    const toMs = ts => {
+      if (!ts) return 0; ts = ts.trim();
+      if (/^\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2}/.test(ts)) return new Date(ts.replace(/\//g,'-')).getTime();
+      if (/^\d{1,2}\/\d{1,2}$/.test(ts)) { const [m,d]=ts.split('/'); return new Date(`${new Date().getFullYear()}-${m.padStart(2,'0')}-${d.padStart(2,'0')}`).getTime(); }
+      return new Date(ts).getTime()||0;
+    };
+    return toMs(gc(b,'TIMESTAMP'))-toMs(gc(a,'TIMESTAMP'));
+  });
   const priority = [
-    ...rev(rows.filter(r => normStatus(gc(r,'STATUS'))===QNA.ST.DONE)),
-    ...rev(rows.filter(r => normStatus(gc(r,'STATUS'))===QNA.ST.PROC)),
-    ...rev(rows.filter(r => normStatus(gc(r,'STATUS'))===QNA.ST.WAIT)),
+    ...sortByDateDesc(rows.filter(r => normStatus(gc(r,'STATUS'))===QNA.ST.PROC)),
+    ...sortByDateDesc(rows.filter(r => normStatus(gc(r,'STATUS'))===QNA.ST.WAIT)),
+    ...sortByDateDesc(rows.filter(r => normStatus(gc(r,'STATUS'))===QNA.ST.DONE)),
   ].slice(0, QNA.CARD_LIMIT);
 
   const cards = priority.map(row => {
@@ -1301,7 +1315,25 @@ function buildDetailHTML(rows) {
     return esc(t).replace(/\s*-\s+/g, '<br>• ').replace(/^• /, '');
   };
 
-  const trs = rows.map((row, i) => {
+  // 1순위: 진행중(최신순) → 2순위: 대기(최신순) → 3순위: 완료(최신순)
+  const toMs = ts => {
+    if (!ts) return 0;
+    ts = ts.trim();
+    if (/^\d{4}[\/\-]\d{1,2}[\/\-]\d{1,2}/.test(ts)) return new Date(ts.replace(/\//g,'-')).getTime();
+    if (/^\d{1,2}\/\d{1,2}$/.test(ts)) {
+      const [m,d] = ts.split('/');
+      return new Date(`${new Date().getFullYear()}-${m.padStart(2,'0')}-${d.padStart(2,'0')}`).getTime();
+    }
+    return new Date(ts).getTime() || 0;
+  };
+  const byDate = arr => [...arr].sort((a,b) => toMs(gc(b,'TIMESTAMP')) - toMs(gc(a,'TIMESTAMP')));
+  const sorted = [
+    ...byDate(rows.filter(r => normStatus(gc(r,'STATUS')) === QNA.ST.PROC)),
+    ...byDate(rows.filter(r => normStatus(gc(r,'STATUS')) === QNA.ST.WAIT)),
+    ...byDate(rows.filter(r => normStatus(gc(r,'STATUS')) === QNA.ST.DONE)),
+  ];
+
+  const trs = sorted.map((row, i) => {
     const ts  = gc(row,'TIMESTAMP');
     const cat = gc(row,'CATEGORY');
     const q   = gc(row,'QUESTION');
