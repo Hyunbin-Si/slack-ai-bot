@@ -6,6 +6,28 @@
   "slides": [
     {
       "id": 1,
+      "theme": "dark-green",
+      "type": "mission",
+      "tag": "Mission",
+      "title": "누구나 자기 __자산__으로\n__돈을 만들 수 있게__ 한다.",
+      "translate": "내 서랍을 내 지갑으로."
+    },
+    {
+      "id": 2,
+      "theme": "dark-green",
+      "type": "vision",
+      "tag": "Vision",
+      "title": "대한민국 최대\n__신뢰 기반__\n가치 교환 시스템.",
+      "translate": "플랫폼이 아닙니다.\n시스템 입니다."
+    },
+    {
+      "id": 3,
+      "theme": "dark-green",
+      "type": "context",
+      "title": "__70명__이 같은 기준으로 움직일 때,\n중고나라는 __시장의 기준__이 된다."
+    },
+    {
+      "id": 4,
       "theme": "dark-neon",
       "type": "intro",
       "tag": "일을 대하는 태도",
@@ -13,12 +35,12 @@
       "body": "일과 업무의 판단 기준이 모호할 때,\n이 3가지 가치를 기준으로 판단합니다",
       "items": [
         { "number": "01", "label": "고객가치", "desc": "유저를 위한" },
-        { "number": "02", "label": "혁신", "desc": "더 나은 답" },
-        { "number": "03", "label": "신뢰", "desc": "있는 그대로" }
+        { "number": "02", "label": "혁신",     "desc": "더 나은 답" },
+        { "number": "03", "label": "신뢰",     "desc": "있는 그대로" }
       ]
     },
     {
-      "id": 2,
+      "id": 5,
       "theme": "dark-neon",
       "type": "value",
       "tag": "핵심가치 01",
@@ -27,7 +49,7 @@
       "body": "우리의 모든 '일'은\n유저를 위한 가치로 연결됩니다"
     },
     {
-      "id": 3,
+      "id": 6,
       "theme": "dark-neon",
       "type": "value",
       "tag": "핵심가치 02",
@@ -36,7 +58,7 @@
       "body": "원래 그런 것은 없습니다.\n더 나은 답은 항상 있습니다"
     },
     {
-      "id": 4,
+      "id": 7,
       "theme": "dark-neon",
       "type": "value",
       "tag": "핵심가치 03",
@@ -45,7 +67,7 @@
       "body": "정보는 있는 그대로 투명하게 공유합니다.\n결정되면 결정을 신뢰합니다"
     },
     {
-      "id": 5,
+      "id": 8,
       "theme": "dark-neon",
       "type": "section",
       "tag": "동료를 대하는 태도 / 문제를 대하는 태도",
@@ -56,7 +78,7 @@
       ]
     },
     {
-      "id": 6,
+      "id": 9,
       "theme": "dark-neon",
       "type": "way",
       "tag": "일하는방식 01",
@@ -66,7 +88,7 @@
       "body": "우리는 상호존중을 기반으로 일하며,\n회사를 위해서 숨기지 않고,\n솔직하게 말합니다"
     },
     {
-      "id": 7,
+      "id": 10,
       "theme": "dark-neon",
       "type": "way",
       "tag": "일하는방식 02",
@@ -76,7 +98,7 @@
       "body": "우리는 혼자가 아닌,\n함께 일하며 성장합니다"
     },
     {
-      "id": 8,
+      "id": 11,
       "theme": "dark-neon",
       "type": "way",
       "tag": "일하는방식 03",
@@ -86,7 +108,7 @@
       "body": "문제는 문제를 '발견하는 순간'부터 시작합니다.\n우리는 문제를 숨기지 않고,\n함께 해결합니다"
     },
     {
-      "id": 9,
+      "id": 12,
       "theme": "dark-neon",
       "type": "way",
       "tag": "일하는방식 04",
@@ -96,7 +118,7 @@
       "body": "우리는 작게 시도하고,\n빠르게 검증합니다"
     },
     {
-      "id": 10,
+      "id": 13,
       "theme": "dark-neon",
       "type": "way",
       "tag": "일하는방식 05",
@@ -106,20 +128,20 @@
       "body": "우리는 내가 시작한 일은 책임지고,\n끝까지 마무리합니다"
     },
     {
-      "id": 11,
+      "id": 14,
       "theme": "dark-neon",
       "type": "culture-intro",
       "tag": "조직문화",
       "title": "조직문화 1.0\n환경설정",
       "items": [
         { "number": "1", "desc": "진정성 있는 소통을 위한", "label": "'님' 문화" },
-        { "number": "2", "desc": "투명한 소통을 위한", "label": "안심톡" },
+        { "number": "2", "desc": "투명한 소통을 위한",     "label": "안심톡" },
         { "number": "3", "desc": "우리의 관계 형성을 위한", "label": "랜덤런치" },
         { "number": "4", "desc": "업무 효율을 높이기 위한", "label": "코어워킹" }
       ]
     },
     {
-      "id": 12,
+      "id": 15,
       "theme": "dark-neon",
       "type": "culture-item",
       "tag": "조직문화 01",
@@ -129,7 +151,7 @@
       "body": "상호 존중을 바탕으로,\n눈치 보지 않고 명확하게\n사실과 의견을 나눕니다"
     },
     {
-      "id": 13,
+      "id": 16,
       "theme": "dark-neon",
       "type": "culture-item",
       "tag": "조직문화 02",
@@ -139,17 +161,17 @@
       "body": "누구나 자유롭게 묻고 제안하는 공간,\n명확하고 투명한 피드백을 약속합니다"
     },
     {
-      "id": 14,
+      "id": 17,
       "theme": "dark-neon",
       "type": "culture-item",
       "tag": "조직문화 03",
       "title": "랜덤런치",
       "subtitle": "평소 대화 못 한 동료와 함께!",
       "badge": "관계 형성",
-      "body": "자유롭게 소통하고,\n여러 구성원과 관계를 맺어보세요!"
+      "body": "자유롭게 소통하고,\n여러 구성원과 관계를 맺어보세요"
     },
     {
-      "id": 15,
+      "id": 18,
       "theme": "dark-neon",
       "type": "culture-item",
       "tag": "조직문화 04",
@@ -159,7 +181,7 @@
       "body": "코어워킹 시간에는 No Meeting, No Slack\n매주 월요일 10:10 ~ 12:10\n동료의 시간을 존중하고 배려해주세요"
     },
     {
-      "id": 16,
+      "id": 19,
       "theme": "dark-neon",
       "type": "qna-dashboard",
       "tag": "익명채널 Q&A",
@@ -167,12 +189,48 @@
       "duration": 20
     },
     {
-      "id": 17,
+      "id": 20,
       "theme": "dark-neon",
       "type": "qna-detail",
       "tag": "익명채널 Q&A",
       "title": "전체 내역",
       "duration": 20
+    },
+    {
+      "id": 21,
+      "theme": "ax-bright",
+      "type": "ax-title",
+      "duration": 15
+    },
+    {
+      "id": 22,
+      "theme": "ax-bright",
+      "type": "ax-match",
+      "duration": 30,
+      "kicker": "AI Challenge",
+      "headline": "__AI 수용성__을 높이는,\n중고나라 AI 챌린지",
+      "roster": [
+        { "name": "강성연", "task": "검색 사전 검증 자동화" },
+        { "name": "김명환", "task": "개발 워크플로우 자동화" },
+        { "name": "김민기", "task": "VLM 기반 사기 탐지" },
+        { "name": "김성은", "task": "뉴스 모니터링 서비스 개발" },
+        { "name": "김소현", "task": "셀러 정산 자동화" },
+        { "name": "김지미", "task": "LLM 기반 자연어 데이터 자동화 환경 구축" },
+        { "name": "김호준", "task": "검색 CS 문의 업무 자동화" },
+        { "name": "문예솔", "task": "디자인 시스템 개선" },
+        { "name": "박세리", "task": "이상거래 모니터링 리포트 자동화" },
+        { "name": "박인혜", "task": "페이모니터링 구글시트 입력 자동화" },
+        { "name": "시현빈", "task": "업무 자동화 대시보드 구축" },
+        { "name": "안혜림", "task": "모니터링 대시보드 자동화" },
+        { "name": "유경호", "task": "LLM 기반 자연어 데이터 조회 및 시각화 환경 구축" },
+        { "name": "이용준", "task": "기술 히스토리 자산화" },
+        { "name": "이진희", "task": "경쟁 C2C 플랫폼 정책·서비스 리서치 자동화" },
+        { "name": "이학준", "task": "일일 앱 거래액, 안심결제율 및 우회거래율 대시보드 구축" },
+        { "name": "전희진", "task": "디자인 시스템 신규 구축" },
+        { "name": "정진영", "task": "서비스 법무 검토 사전 체크" },
+        { "name": "조상현", "task": "업무 자동화 : 시스템 환경에서의 트러블슈팅" },
+        { "name": "채은빈", "task": "중고거래 분쟁 판단 및 답변 초안 자동화 시스템 구축" }
+      ]
     }
   ]
 }

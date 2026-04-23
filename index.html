@@ -523,6 +523,290 @@
     .theme-light-editorial .s-divider { background: linear-gradient(90deg, var(--accent), var(--sakura)); }
     .theme-light-editorial .s-title { color: #1E3A5F; }
 
+    /* — ax-bright — ✨ 밝고 에너지 있는 테마 (AX 캠페인 전용) */
+    .theme-ax-bright {
+      background: #f0fdf4;
+      color: #0b1220;
+    }
+    .theme-ax-bright .slide-canvas { display: none; }
+    .theme-ax-bright .slide-ghost-num {
+      font-weight: 400;
+      background: linear-gradient(135deg, rgba(13,204,90,0.12), rgba(139,92,246,0.12));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    /* 배경 블롭 + 그레인 */
+    .ax-bg {
+      position: absolute; inset: 0; z-index: 0; overflow: hidden;
+      background:
+        radial-gradient(ellipse at 20% 0%, #fef3c7 0%, transparent 55%),
+        radial-gradient(ellipse at 100% 100%, #ddd6fe 0%, transparent 50%),
+        linear-gradient(135deg, #f0fdf4 0%, #ecfeff 50%, #fffbeb 100%);
+    }
+    .ax-blob {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px); opacity: 0.55; mix-blend-mode: multiply;
+      will-change: transform;
+    }
+    .ax-blob.b1 { width: 52vw; height: 52vw; top: -18vw; left: -14vw; background: #6ee7b7; animation: axBlob1 28s ease-in-out infinite; }
+    .ax-blob.b2 { width: 48vw; height: 48vw; top: -10vw; right: -12vw; background: #fcd34d; animation: axBlob2 32s ease-in-out infinite; }
+    .ax-blob.b3 { width: 44vw; height: 44vw; bottom: -14vw; left: 10vw; background: #fbcfe8; animation: axBlob3 30s ease-in-out infinite; }
+    .ax-blob.b4 { width: 40vw; height: 40vw; bottom: -16vw; right: -10vw; background: #a5f3fc; animation: axBlob4 34s ease-in-out infinite; }
+    @keyframes axBlob1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(6vw, 4vw) scale(1.08); } }
+    @keyframes axBlob2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-5vw, 5vw) scale(1.1); } }
+    @keyframes axBlob3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(4vw, -5vw) scale(1.07); } }
+    @keyframes axBlob4 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-6vw, -3vw) scale(1.1); } }
+    .ax-grain {
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.35'/></svg>");
+      opacity: 0.06;
+    }
+
+    /* ax-title */
+    .theme-ax-bright.slide-type-ax-title .slide-content {
+      justify-content: center; align-items: flex-start;
+    }
+    .ax-main-title {
+      font-family: var(--font-body);
+      font-size: clamp(56px, 9vw, 140px);
+      font-weight: 900; line-height: 1.02;
+      letter-spacing: -0.025em;
+      margin-bottom: 4vh;
+      color: #0b1220;
+    }
+    .ax-pop {
+      display: inline-block;
+      background: linear-gradient(120deg, #0dcc5a 0%, #10b981 30%, #06b6d4 55%, #8b5cf6 85%, #ec4899 100%);
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent;
+      animation: axHue 6s ease-in-out infinite;
+    }
+    @keyframes axHue {
+      0%,100% { filter: hue-rotate(0deg); }
+      50%     { filter: hue-rotate(30deg); }
+    }
+    .ax-dots { display: inline-block; color: #f59e0b; letter-spacing: -0.05em; }
+    .ax-title-divider {
+      width: clamp(60px, 7vw, 96px); height: 4px; border-radius: 2px;
+      background: linear-gradient(90deg, #10b981, #f59e0b, #ec4899, #8b5cf6);
+    }
+
+    /* ax-match */
+    .theme-ax-bright.slide-type-ax-match .slide-content {
+      justify-content: flex-start;
+      padding: 6vh 8vw;
+    }
+    .ax-kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: clamp(11px, 1vw, 14px);
+      font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+      padding: 7px 18px; border-radius: 999px;
+      background: #ffffff;
+      border: 1.5px solid rgba(15,23,42,0.06);
+      box-shadow: 0 8px 24px -10px rgba(15,23,42,0.15);
+      color: #0b1220;
+      margin-bottom: 2.4vh; align-self: flex-start;
+    }
+    .ax-kicker::before {
+      content: ""; width: 9px; height: 9px; border-radius: 50%;
+      background: linear-gradient(135deg, #10b981, #06b6d4);
+      box-shadow: 0 0 0 3px rgba(16,185,129,0.2);
+    }
+    .ax-match-headline { margin-bottom: 3.4vh; }
+    .ax-match-headline h2 {
+      font-family: var(--font-body);
+      font-size: clamp(30px, 3.8vw, 56px);
+      font-weight: 900; line-height: 1.12; letter-spacing: -0.025em;
+      color: #0b1220;
+    }
+    .ax-match-headline h2 em {
+      font-style: normal;
+      background: linear-gradient(120deg, #10b981 0%, #06b6d4 40%, #8b5cf6 80%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .ax-pair-list {
+      position: relative; display: flex; flex-direction: column;
+      gap: clamp(10px, 1.6vh, 18px);
+      flex: 1; min-height: 0; width: 100%;
+    }
+    .ax-pair-row {
+      display: grid;
+      grid-template-columns: clamp(140px, 16vw, 220px) auto 1fr;
+      align-items: center;
+      gap: clamp(14px, 1.8vw, 30px);
+      padding: clamp(10px, 1.4vh, 18px) clamp(14px, 1.6vw, 24px);
+      background: #ffffff;
+      border: 1.5px solid rgba(15,23,42,0.06);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px -14px rgba(15,23,42,0.15);
+      opacity: 0; transform: translateY(14px);
+      transition:
+        opacity 0.55s ease,
+        transform 0.55s cubic-bezier(0.22,1,0.36,1),
+        box-shadow 0.55s ease, border-color 0.55s ease;
+      position: relative; overflow: hidden;
+    }
+    .ax-pair-row::before {
+      content: ""; position: absolute; left: 0; top: 15%; bottom: 15%;
+      width: 4px; border-radius: 4px;
+      background: var(--pair-color, #10b981); opacity: 0.85;
+    }
+    .ax-pair-row.show { opacity: 1; transform: translateY(0); }
+    .ax-pair-row.matched {
+      border-color: transparent;
+      box-shadow:
+        0 18px 44px -14px var(--pair-shadow, rgba(16,185,129,0.45)),
+        0 0 0 3px var(--pair-ring, rgba(16,185,129,0.16));
+    }
+    .ax-pair-name {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      font-size: clamp(16px, 1.6vw, 24px);
+      font-weight: 800; letter-spacing: -0.01em;
+      color: #0b1220;
+      padding: clamp(10px, 1.2vh, 14px) clamp(12px, 1vw, 16px);
+      background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(250,250,255,0.9));
+      border: 1.5px solid var(--pair-color, #10b981);
+      border-radius: 12px;
+      transition: background 0.55s ease, color 0.55s ease, transform 0.55s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ax-pair-row.matched .ax-pair-name {
+      background: var(--pair-color, #10b981); color: #ffffff;
+      transform: translateX(2px);
+    }
+    .ax-pair-connector {
+      position: relative;
+      width: clamp(60px, 8vw, 120px); height: 28px;
+      display: flex; align-items: center;
+    }
+    .ax-pair-connector .line {
+      position: relative; width: 100%; height: 2.5px;
+      border-radius: 2px; background: rgba(15,23,42,0.1); overflow: hidden;
+    }
+    .ax-pair-connector .line::after {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 0%;
+      background: linear-gradient(90deg, var(--pair-color, #10b981), var(--pair-color, #10b981));
+      box-shadow: 0 0 10px var(--pair-shadow, rgba(16,185,129,0.55));
+      transition: width 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .ax-pair-row.matched .ax-pair-connector .line::after { width: 100%; }
+    .ax-pair-connector .arrow {
+      position: absolute; right: -4px; top: 50%;
+      transform: translateY(-50%) scale(0.6);
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--pair-color, #10b981);
+      box-shadow: 0 0 0 4px rgba(15,23,42,0);
+      opacity: 0;
+      transition: transform 0.5s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease, box-shadow 0.5s ease;
+    }
+    .ax-pair-row.matched .ax-pair-connector .arrow {
+      opacity: 1; transform: translateY(-50%) scale(1);
+      box-shadow: 0 0 0 5px var(--pair-ring, rgba(16,185,129,0.18));
+    }
+    .ax-pair-task { display: flex; align-items: center; gap: clamp(10px, 1vw, 16px); min-width: 0; }
+    .ax-pair-task-num {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.4vw, 36px);
+      color: var(--pair-color, #10b981);
+      line-height: 1; flex-shrink: 0;
+      transition: transform 0.55s ease;
+    }
+    .ax-pair-row.matched .ax-pair-task-num { transform: scale(1.06); }
+    .ax-pair-task-text {
+      font-size: clamp(14px, 1.25vw, 20px);
+      font-weight: 600; color: #0b1220;
+      line-height: 1.35; word-break: keep-all; min-width: 0;
+    }
+
+    /* — dark-green — 🌑 딥 블랙 + 그린 강조 */
+    .theme-dark-green {
+      background: #141313;
+      color: #FFFFFF;
+    }
+    .theme-dark-green .slide-ghost-num { color: rgba(13,204,90,0.07); }
+    .theme-dark-green .s-tag {
+      background: rgba(13,204,90,0.12);
+      color: #0dcc5a;
+      border: 1px solid rgba(13,204,90,0.3);
+      border-radius: 20px;
+    }
+    .theme-dark-green .s-badge { border-color: #0dcc5a; color: #0dcc5a; }
+    .theme-dark-green .s-title { color: #FFFFFF; }
+    .theme-dark-green .s-subtitle { color: rgba(255,255,255,0.55); }
+    .theme-dark-green .s-body { color: rgba(255,255,255,0.72); }
+    .theme-dark-green .s-divider { background: #0dcc5a; }
+    .theme-dark-green .title-sub-row .s-subtitle { border-left-color: #0dcc5a; }
+
+    /* 강조 텍스트 — __텍스트__ → em 태그로 렌더링 */
+    .theme-dark-green .s-title em,
+    .theme-dark-green .mission-title em,
+    .theme-dark-green .vision-title em,
+    .theme-dark-green .context-title em {
+      color: #0dcc5a;
+      font-style: normal;
+    }
+
+    /* mission 슬라이드 */
+    .mission-title {
+      font-size: clamp(38px, 6.5vw, 96px);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 4vh;
+      white-space: pre-line;
+      color: #FFFFFF;
+    }
+    .mission-translate,
+    .vision-translate {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 6px;
+      border-left: 3px solid #0dcc5a;
+      padding: clamp(10px, 1.2vh, 18px) clamp(16px, 2vw, 32px);
+      background: rgba(13,204,90,0.06);
+      border-radius: 0 8px 8px 0;
+      margin-top: 0.5vh;
+    }
+    .mission-translate .translate-label,
+    .vision-translate .translate-label {
+      font-size: clamp(9px, 0.75vw, 11px);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .mission-translate .translate-text,
+    .vision-translate .translate-text {
+      font-size: clamp(20px, 2.8vw, 44px);
+      font-weight: 700;
+      color: #0dcc5a;
+      white-space: pre-line;
+      line-height: 1.3;
+    }
+
+    /* vision 슬라이드 */
+    .vision-title {
+      font-size: clamp(38px, 6.5vw, 96px);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 4vh;
+      white-space: pre-line;
+      color: #FFFFFF;
+    }
+
+    /* context 슬라이드 */
+    .context-title {
+      font-size: clamp(28px, 4.5vw, 72px);
+      font-weight: 900;
+      line-height: 1.35;
+      white-space: pre-line;
+      color: #FFFFFF;
+      max-width: 80vw;
+    }
+
+    /* canvas — dark-green 배경용 */
+    .theme-dark-green .slide-canvas { background: #141313; }
+
     /* ============================================================
        UI LAYER
     ============================================================ */
@@ -682,6 +966,149 @@
 
 <script>
 /* ============================================================
+   AX 캠페인 — 데이터 & 매칭 애니메이션
+============================================================ */
+const AX_ROSTER = [
+  { name: '강성연', task: '검색 사전 검증 자동화' },
+  { name: '김명환', task: '개발 워크플로우 자동화' },
+  { name: '김민기', task: 'VLM 기반 사기 탐지' },
+  { name: '김성은', task: '뉴스 모니터링 서비스 개발' },
+  { name: '김소현', task: '셀러 정산 자동화' },
+  { name: '김지미', task: 'LLM 기반 자연어 데이터 자동화 환경 구축' },
+  { name: '김호준', task: '검색 CS 문의 업무 자동화' },
+  { name: '문예솔', task: '디자인 시스템 개선' },
+  { name: '박세리', task: '이상거래 모니터링 리포트 자동화' },
+  { name: '박인혜', task: '페이모니터링 구글시트 입력 자동화' },
+  { name: '시현빈', task: '안심톡 자동화 대시보드 구축' },
+  { name: '안혜림', task: '모니터링 대시보드 자동화' },
+  { name: '유경호', task: 'LLM 기반 자연어 데이터 조회 및 시각화 환경 구축' },
+  { name: '이용준', task: '기술 히스토리 자산화' },
+  { name: '이진희', task: '경쟁 C2C 플랫폼 정책·서비스 리서치 자동화' },
+  { name: '이학준', task: '일일 앱 거래액, 안심결제율 및 우회거래율 대시보드 구축' },
+  { name: '전희진', task: '디자인 시스템 신규 구축' },
+  { name: '정진영', task: '서비스 법무 검토 사전 체크' },
+  { name: '조상현', task: '업무 자동화 : 시스템 환경에서의 트러블슈팅' },
+  { name: '채은빈', task: '중고거래 분쟁 판단 및 답변 초안 자동화 시스템 구축' },
+];
+const AX_COLORS = [
+  { base: '#10b981', ring: 'rgba(16,185,129,0.22)', shadow: 'rgba(16,185,129,0.55)' },
+  { base: '#f59e0b', ring: 'rgba(245,158,11,0.24)', shadow: 'rgba(245,158,11,0.55)' },
+  { base: '#ec4899', ring: 'rgba(236,72,153,0.24)', shadow: 'rgba(236,72,153,0.55)' },
+  { base: '#8b5cf6', ring: 'rgba(139,92,246,0.24)', shadow: 'rgba(139,92,246,0.55)' },
+  { base: '#3b82f6', ring: 'rgba(59,130,246,0.24)', shadow: 'rgba(59,130,246,0.55)' },
+  { base: '#06b6d4', ring: 'rgba(6,182,212,0.24)', shadow: 'rgba(6,182,212,0.55)' },
+  { base: '#84cc16', ring: 'rgba(132,204,22,0.24)', shadow: 'rgba(132,204,22,0.55)' },
+  { base: '#fb7185', ring: 'rgba(251,113,133,0.24)', shadow: 'rgba(251,113,133,0.55)' },
+];
+const AX_PAIRS_PER_VIEW = 4;
+
+let axMatchTimer = null;
+let axDeck = [];
+let axDeckIdx = 0;
+let axCycleSeq = 0;
+
+function axShuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+/* roster(과제 있는 사람)만 필터링하여 매칭 번호 붙여 덱으로 준비 */
+function axBuildDeck(roster) {
+  const withTask = roster.filter(r => r && r.task);
+  let n = 0;
+  const decorated = withTask.map(r => ({
+    name: r.name,
+    task: r.task,
+    _num: ++n,
+  }));
+  return axShuffle(decorated);
+}
+
+function axNextChunk() {
+  if (!axDeck.length) return { chunk: [] };
+  if (axDeckIdx + AX_PAIRS_PER_VIEW > axDeck.length) {
+    // 덱 소진 → 다시 섞기
+    const currentSlide = slides[current] || {};
+    const roster = (Array.isArray(currentSlide.roster) && currentSlide.roster.length)
+      ? currentSlide.roster : AX_ROSTER;
+    axDeck = axBuildDeck(roster);
+    axDeckIdx = 0;
+  }
+  const chunk = axDeck.slice(axDeckIdx, axDeckIdx + AX_PAIRS_PER_VIEW);
+  axDeckIdx += AX_PAIRS_PER_VIEW;
+  return { chunk };
+}
+
+function axBuildRows(listEl, chunk) {
+  listEl.innerHTML = '';
+  chunk.forEach((item, i) => {
+    const color = AX_COLORS[i % AX_COLORS.length];
+    const row = document.createElement('div');
+    row.className = 'ax-pair-row';
+    row.style.setProperty('--pair-color', color.base);
+    row.style.setProperty('--pair-ring', color.ring);
+    row.style.setProperty('--pair-shadow', color.shadow);
+
+    const numHtml  = String(item._num).padStart(2,'0');
+    const taskHtml = item.task;
+
+    row.innerHTML =
+      `<div class="ax-pair-name">${item.name}</div>` +
+      `<div class="ax-pair-connector"><div class="line"></div><div class="arrow"></div></div>` +
+      `<div class="ax-pair-task">` +
+        `<div class="ax-pair-task-num">${numHtml}</div>` +
+        `<div class="ax-pair-task-text">${taskHtml}</div>` +
+      `</div>`;
+    listEl.appendChild(row);
+  });
+}
+
+function axAnimateCycle() {
+  const listEl = document.querySelector('.slide.active [data-ax-pair-list]');
+  if (!listEl) return;
+  const seq = ++axCycleSeq;
+  const { chunk } = axNextChunk();
+  if (!chunk.length) return;
+  axBuildRows(listEl, chunk);
+  const rows = Array.from(listEl.querySelectorAll('.ax-pair-row'));
+  rows.forEach((row, i) => {
+    setTimeout(() => { if (seq !== axCycleSeq) return; row.classList.add('show'); }, 80 + i * 160);
+    setTimeout(() => { if (seq !== axCycleSeq) return; row.classList.add('matched'); }, 80 + i * 160 + 700);
+  });
+}
+
+function startAxMatch() {
+  stopAxMatch();
+  const currentSlide = slides[current] || {};
+  const roster = (Array.isArray(currentSlide.roster) && currentSlide.roster.length)
+    ? currentSlide.roster : AX_ROSTER;
+  axDeck = axBuildDeck(roster);
+  axDeckIdx = 0;
+  axAnimateCycle();
+  axMatchTimer = setInterval(axAnimateCycle, 4800);
+}
+
+function stopAxMatch() {
+  if (axMatchTimer) { clearInterval(axMatchTimer); axMatchTimer = null; }
+  axCycleSeq++;
+  document.querySelectorAll('[data-ax-pair-list]').forEach(el => { el.innerHTML = ''; });
+}
+
+/* ── ax-title 슬라이드 로딩 점 (…) 애니메이션 ── */
+const AX_DOT_STATES = [' .', ' ..', ' ...'];
+let axDotIdx = 0;
+setInterval(() => {
+  axDotIdx = (axDotIdx + 1) % AX_DOT_STATES.length;
+  document.querySelectorAll('[data-ax-dots]').forEach(el => {
+    el.textContent = AX_DOT_STATES[axDotIdx];
+  });
+}, 500);
+
+/* ============================================================
    STATE
 ============================================================ */
 let slides = [];
@@ -704,7 +1131,7 @@ const DURATION = () => ((slides[current] && slides[current].duration) || cfg.dur
    — slides.json 수정 후 GitHub Pages에 올리면 자동 반영됨
    — 로컬에서 바로 열 때는 아래 데이터를 사용
 ============================================================ */
-const FALLBACK = {"config":{"duration":15,"accentColor":"#0dcc5a"},"slides":[{"id":1,"theme":"dark-neon","type":"intro","tag":"일을 대하는 태도","title":"핵심가치 3가지","body":"일과 업무의 판단 기준이 모호할 때,\n이 3가지 가치를 기준으로 판단합니다","items":[{"number":"01","label":"고객가치","desc":"유저를 위한"},{"number":"02","label":"혁신","desc":"더 나은 답"},{"number":"03","label":"신뢰","desc":"있는 그대로"}]},{"id":2,"theme":"dark-neon","type":"value","tag":"핵심가치 01","title":"유저를 위한","badge":"고객가치","body":"우리의 모든 '일'은\n유저를 위한 가치로 연결됩니다"},{"id":3,"theme":"dark-neon","type":"value","tag":"핵심가치 02","title":"더 나은 답","badge":"혁신","body":"원래 그런 것은 없습니다.\n더 나은 답은 항상 있습니다"},{"id":4,"theme":"dark-neon","type":"value","tag":"핵심가치 03","title":"있는 그대로","badge":"신뢰","body":"정보는 있는 그대로 투명하게 공유합니다.\n결정되면 결정을 신뢰합니다"},{"id":5,"theme":"dark-neon","type":"section","tag":"동료를 대하는 태도 / 문제를 대하는 태도","title":"일하는방식 5가지","items":[{"group":"동료를 대하는 태도","values":["진정성","협업"]},{"group":"문제를 대하는 태도","values":["문제해결","빠른실행","책임감"]}]},{"id":6,"theme":"dark-neon","type":"way","tag":"일하는방식 01","title":"진정성","subtitle":"투명하고, 솔직하게","badge":"동료를 대하는 태도","body":"우리는 상호존중을 기반으로 일하며,\n회사를 위해서 숨기지 않고,\n솔직하게 말합니다"},{"id":7,"theme":"dark-neon","type":"way","tag":"일하는방식 02","title":"협업","subtitle":"함께, 성장하기","badge":"동료를 대하는 태도","body":"우리는 혼자가 아닌,\n함께 일하며 성장합니다"},{"id":8,"theme":"dark-neon","type":"way","tag":"일하는방식 03","title":"문제해결","subtitle":"발견하고, 해결하기","badge":"문제를 대하는 태도","body":"문제는 문제를 '발견하는 순간'부터 시작합니다.\n우리는 문제를 숨기지 않고,\n함께 해결합니다"},{"id":9,"theme":"dark-neon","type":"way","tag":"일하는방식 04","title":"빠른실행","subtitle":"작고, 빠르게","badge":"문제를 대하는 태도","body":"우리는 작게 시도하고,\n빠르게 검증합니다"},{"id":10,"theme":"dark-neon","type":"way","tag":"일하는방식 05","title":"책임감","subtitle":"주도적으로, 마무리까지","badge":"문제를 대하는 태도","body":"우리는 내가 시작한 일은 책임지고,\n끝까지 마무리합니다"},{"id":11,"theme":"dark-neon","type":"culture-intro","tag":"조직문화","title":"조직문화 1.0\n환경설정","items":[{"number":"1","desc":"진정성 있는 소통을 위한","label":"'님' 문화"},{"number":"2","desc":"투명한 소통을 위한","label":"안심톡"},{"number":"3","desc":"우리의 관계 형성을 위한","label":"랜덤런치"},{"number":"4","desc":"업무 효율을 높이기 위한","label":"코어워킹"}]},{"id":12,"theme":"dark-neon","type":"culture-item","tag":"조직문화 01","title":"'님' 문화","subtitle":"인욱'님'이라 불러주세요","badge":"진정성 있는 소통","body":"상호 존중을 바탕으로,\n눈치 보지 않고 명확하게\n사실과 의견을 나눕니다"},{"id":13,"theme":"dark-neon","type":"culture-item","tag":"조직문화 02","title":"안심톡","subtitle":"회사를 위한 개선 의견을 보내주세요!","badge":"투명한 소통","body":"누구나 자유롭게 묻고 제안하는 공간,\n명확하고 투명한 피드백을 약속합니다"},{"id":14,"theme":"dark-neon","type":"culture-item","tag":"조직문화 03","title":"랜덤런치","subtitle":"평소 이야기 나누지 못 한 동료와 함께!","badge":"관계 형성","body":"자유롭게 소통하고,\n여러 구성원과 관계를 맺어보세요!"},{"id":15,"theme":"dark-neon","type":"culture-item","tag":"조직문화 04","title":"코어워킹","subtitle":"업무에 더 집중하여 실행의 속도를 올려보세요!","badge":"업무 효율","body":"코어워킹 시간에는 No Meeting, No Slack\n매주 월요일 10:10 ~ 12:10\n동료의 시간을 존중하고 배려해주세요"},{"id":16,"theme":"dark-neon","type":"qna-dashboard","tag":"익명채널 Q&A","title":"안심톡 현황"},{"id":17,"theme":"dark-neon","type":"qna-detail","tag":"익명채널 Q&A","title":"전체 내역"}]};
+const FALLBACK = {"config":{"duration":15,"accentColor":"#0dcc5a"},"slides":[{"id":1,"theme":"dark-green","type":"mission","tag":"Mission","title":"누구나 자기 __자산__으로\n__돈을 만들 수 있게__ 한다.","translate":"내 서랍을 내 지갑으로."},{"id":2,"theme":"dark-green","type":"vision","tag":"Vision","title":"대한민국 최대\n__신뢰 기반__\n가치 교환 시스템.","translate":"플랫폼이 아닙니다.\n시스템입니다."},{"id":3,"theme":"dark-green","type":"context","title":"__70명__이 같은 기준으로 움직일 때,\n중고나라는 __시장의 기준__이 된다."},{"id":4,"theme":"dark-neon","type":"intro","tag":"일을 대하는 태도","title":"핵심가치 3가지","body":"일과 업무의 판단 기준이 모호할 때,\n이 3가지 가치를 기준으로 판단합니다","items":[{"number":"01","label":"고객가치","desc":"유저를 위한"},{"number":"02","label":"혁신","desc":"더 나은 답"},{"number":"03","label":"신뢰","desc":"있는 그대로"}]},{"id":5,"theme":"dark-neon","type":"value","tag":"핵심가치 01","title":"유저를 위한","badge":"고객가치","body":"우리의 모든 '일'은\n유저를 위한 가치로 연결됩니다"},{"id":6,"theme":"dark-neon","type":"value","tag":"핵심가치 02","title":"더 나은 답","badge":"혁신","body":"원래 그런 것은 없습니다.\n더 나은 답은 항상 있습니다"},{"id":7,"theme":"dark-neon","type":"value","tag":"핵심가치 03","title":"있는 그대로","badge":"신뢰","body":"정보는 있는 그대로 투명하게 공유합니다.\n결정되면 결정을 신뢰합니다"},{"id":8,"theme":"dark-neon","type":"section","tag":"동료를 대하는 태도 / 문제를 대하는 태도","title":"일하는방식 5가지","items":[{"group":"동료를 대하는 태도","values":["진정성","협업"]},{"group":"문제를 대하는 태도","values":["문제해결","빠른실행","책임감"]}]},{"id":9,"theme":"dark-neon","type":"way","tag":"일하는방식 01","title":"진정성","subtitle":"투명하고, 솔직하게","badge":"동료를 대하는 태도","body":"우리는 상호존중을 기반으로 일하며,\n회사를 위해서 숨기지 않고,\n솔직하게 말합니다"},{"id":10,"theme":"dark-neon","type":"way","tag":"일하는방식 02","title":"협업","subtitle":"함께, 성장하기","badge":"동료를 대하는 태도","body":"우리는 혼자가 아닌,\n함께 일하며 성장합니다"},{"id":11,"theme":"dark-neon","type":"way","tag":"일하는방식 03","title":"문제해결","subtitle":"발견하고, 해결하기","badge":"문제를 대하는 태도","body":"문제는 문제를 '발견하는 순간'부터 시작합니다.\n우리는 문제를 숨기지 않고,\n함께 해결합니다"},{"id":12,"theme":"dark-neon","type":"way","tag":"일하는방식 04","title":"빠른실행","subtitle":"작고, 빠르게","badge":"문제를 대하는 태도","body":"우리는 작게 시도하고,\n빠르게 검증합니다"},{"id":13,"theme":"dark-neon","type":"way","tag":"일하는방식 05","title":"책임감","subtitle":"주도적으로, 마무리까지","badge":"문제를 대하는 태도","body":"우리는 내가 시작한 일은 책임지고,\n끝까지 마무리합니다"},{"id":14,"theme":"dark-neon","type":"culture-intro","tag":"조직문화","title":"조직문화 1.0\n환경설정","items":[{"number":"1","desc":"진정성 있는 소통을 위한","label":"'님' 문화"},{"number":"2","desc":"투명한 소통을 위한","label":"안심톡"},{"number":"3","desc":"우리의 관계 형성을 위한","label":"랜덤런치"},{"number":"4","desc":"업무 효율을 높이기 위한","label":"코어워킹"}]},{"id":15,"theme":"dark-neon","type":"culture-item","tag":"조직문화 01","title":"'님' 문화","subtitle":"인욱'님'으로 불러주세요","badge":"진정성 있는 소통","body":"상호 존중을 바탕으로,\n눈치 보지 않고 명확하게\n사실과 의견을 나눕니다"},{"id":16,"theme":"dark-neon","type":"culture-item","tag":"조직문화 02","title":"안심톡","subtitle":"회사를 위한 개선 의견을 보내주세요!","badge":"투명한 소통","body":"누구나 자유롭게 묻고 제안하는 공간,\n명확하고 투명한 피드백을 약속합니다"},{"id":17,"theme":"dark-neon","type":"culture-item","tag":"조직문화 03","title":"랜덤런치","subtitle":"평소 대화 못 한 동료와 함께!","badge":"관계 형성","body":"자유롭게 소통하고,\n여러 구성원과 관계를 맺어보세요!"},{"id":18,"theme":"dark-neon","type":"culture-item","tag":"조직문화 04","title":"코어워킹","subtitle":"업무 집중으로 실행 속도를 높여요!","badge":"업무 효율","body":"코어워킹 시간에는 No Meeting, No Slack\n매주 월요일 10:10 ~ 12:10\n동료의 시간을 존중하고 배려해주세요"},{"id":19,"theme":"dark-neon","type":"qna-dashboard","tag":"익명채널 Q&A","title":"안심톡 현황","duration":20},{"id":20,"theme":"dark-neon","type":"qna-detail","tag":"익명채널 Q&A","title":"전체 내역","duration":20},{"id":21,"theme":"ax-bright","type":"ax-title","duration":15},{"id":22,"theme":"ax-bright","type":"ax-match","duration":30,"kicker":"AI Challenge","headline":"__AI 수용성__을 높이는,\n중고나라 AI 챌린지","roster":[{"name":"강성연","task":"검색 사전 검증 자동화"},{"name":"김명환","task":"개발 워크플로우 자동화"},{"name":"김민기","task":"VLM 기반 사기 탐지"},{"name":"김성은","task":"뉴스 모니터링 서비스 개발"},{"name":"김소현","task":"셀러 정산 자동화"},{"name":"김지미","task":"LLM 기반 자연어 데이터 자동화 환경 구축"},{"name":"김호준","task":"검색 CS 문의 업무 자동화"},{"name":"문예솔","task":"디자인 시스템 개선"},{"name":"박세리","task":"이상거래 모니터링 리포트 자동화"},{"name":"박인혜","task":"페이모니터링 구글시트 입력 자동화"},{"name":"시현빈","task":"안심톡 자동화 대시보드 구축"},{"name":"안혜림","task":"모니터링 대시보드 자동화"},{"name":"유경호","task":"LLM 기반 자연어 데이터 조회 및 시각화 환경 구축"},{"name":"이용준","task":"기술 히스토리 자산화"},{"name":"이진희","task":"경쟁 C2C 플랫폼 정책·서비스 리서치 자동화"},{"name":"이학준","task":"일일 앱 거래액, 안심결제율 및 우회거래율 대시보드 구축"},{"name":"전희진","task":"디자인 시스템 신규 구축"},{"name":"정진영","task":"서비스 법무 검토 사전 체크"},{"name":"조상현","task":"업무 자동화 : 시스템 환경에서의 트러블슈팅"},{"name":"채은빈","task":"중고거래 분쟁 판단 및 답변 초안 자동화 시스템 구축"}]}]};
 
 /* ============================================================
    FETCH & INIT
@@ -743,8 +1170,25 @@ function buildSlides() {
   slides.forEach((s, i) => {
     const el = document.createElement('div');
     const isQna = s.type === 'qna-dashboard' || s.type === 'qna-detail';
-    el.className = `slide theme-${s.theme || 'dark-neon'}${isQna ? ' qna-slide' : ''}`;
+    const typeCls = s.type ? ` slide-type-${s.type}` : '';
+    el.className = `slide theme-${s.theme || 'dark-neon'}${isQna ? ' qna-slide' : ''}${typeCls}`;
     el.dataset.i = i;
+    el.dataset.type = s.type || '';
+
+    // ax-bright 테마 전용 — 배경 블롭 + 그레인
+    if ((s.theme || '') === 'ax-bright') {
+      const bg = document.createElement('div');
+      bg.className = 'ax-bg';
+      bg.innerHTML =
+        '<div class="ax-blob b1"></div>' +
+        '<div class="ax-blob b2"></div>' +
+        '<div class="ax-blob b3"></div>' +
+        '<div class="ax-blob b4"></div>';
+      el.appendChild(bg);
+      const grain = document.createElement('div');
+      grain.className = 'ax-grain';
+      el.appendChild(grain);
+    }
 
     // canvas
     const cv = document.createElement('canvas');
@@ -788,7 +1232,38 @@ function renderSlide(s) {
   const div    = `<div class="s-el s-divider"></div>`;
   const body   = s.body   ? `<div class="s-el s-body">${nl(s.body)}</div>` : '';
 
-  if (type === 'intro') {
+  // __텍스트__ → <em> 강조 변환
+  const hl = t => (t || '').replace(/__([^_]+)__/g, '<em>$1</em>').replace(/\n/g, '<br>');
+
+  if (type === 'mission') {
+    const titleHtml = hl(s.title);
+    const transHtml = s.translate
+      ? `<div class="s-el mission-translate">
+           <span class="translate-label">한 줄 번역</span>
+           <span class="translate-text">${nl(s.translate)}</span>
+         </div>`
+      : '';
+    h = tag + `<div class="s-el s-divider"></div>` +
+        `<div class="s-el mission-title">${titleHtml}</div>` +
+        transHtml;
+
+  } else if (type === 'vision') {
+    const titleHtml = hl(s.title);
+    const transHtml = s.translate
+      ? `<div class="s-el vision-translate">
+           <span class="translate-label">한 줄 번역</span>
+           <span class="translate-text">${nl(s.translate)}</span>
+         </div>`
+      : '';
+    h = tag + `<div class="s-el s-divider"></div>` +
+        `<div class="s-el vision-title">${titleHtml}</div>` +
+        transHtml;
+
+  } else if (type === 'context') {
+    const titleHtml = hl(s.title);
+    h = `<div class="s-el context-title">${titleHtml}</div>`;
+
+  } else if (type === 'intro') {
     h = tag + title + div + body;
     if (s.items && s.items.length) {
       const items = s.items.map(it => `
@@ -835,6 +1310,19 @@ function renderSlide(s) {
 
   } else if (type === 'culture-item') {
     h = badge + tag + titleSubRow + div + body;
+
+  } else if (type === 'ax-title') {
+    h = `<div class="s-el ax-main-title">중고나라<br>`
+      + `<span class="ax-pop">AX 캠페인</span><br>`
+      + `진행중<span class="ax-dots" data-ax-dots="1"></span></div>`
+      + `<div class="s-el ax-title-divider"></div>`;
+
+  } else if (type === 'ax-match') {
+    const axKicker   = s.kicker   || 'AI Challenge';
+    const axHeadline = s.headline || '__AI 수용성__을 높이는,\n중고나라 AI 챌린지';
+    h = `<div class="s-el ax-kicker">${axKicker}</div>`
+      + `<div class="s-el ax-match-headline"><h2>${hl(axHeadline)}</h2></div>`
+      + `<div class="s-el ax-pair-list" data-ax-pair-list="1"></div>`;
 
   } else if (type === 'qna-dashboard') {
     // 동적 데이터 — 나중에 updateQnaSlides()로 채워짐
@@ -889,6 +1377,9 @@ function goTo(idx, animate = true) {
 
   stopCanvas(current);
 
+  // 이전 슬라이드가 ax-match였다면 매칭 루프 정지
+  if (slides[current] && slides[current].type === 'ax-match') stopAxMatch();
+
   current = ((idx % slides.length) + slides.length) % slides.length;
   const el = all[current];
   el.classList.add('active');
@@ -902,6 +1393,11 @@ function goTo(idx, animate = true) {
   updateDots();
   updateCounter();
   startCanvas(current);
+
+  // 새 슬라이드가 ax-match라면 진입 애니메이션 이후 매칭 루프 시작
+  if (slides[current] && slides[current].type === 'ax-match') {
+    setTimeout(startAxMatch, 900);
+  }
 
   if (animate) {
     resetProgress();
@@ -1052,7 +1548,68 @@ function startCanvas(idx) {
   const theme = slide.theme || 'dark-neon';
   let rafID;
 
-  if (theme === 'dark-neon') {
+  if (theme === 'dark-green') {
+    /* dark-green: 딥 블랙 위 그린 파티클 + 희미한 그리드 라인 */
+    const pts = Array.from({ length: 50 }, () => ({
+      x: Math.random() * W, y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 0.28, vy: (Math.random() - 0.5) * 0.28,
+      r: Math.random() * 1.4 + 0.3,
+      ph: Math.random() * Math.PI * 2,
+    }));
+
+    function drawGreen() {
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = '#141313';
+      ctx.fillRect(0, 0, W, H);
+
+      const t = Date.now() / 1000;
+
+      // 우상단 그린 glow
+      const gr = ctx.createRadialGradient(W * 0.85, H * 0.1, 0, W * 0.85, H * 0.1, W * 0.5);
+      const ga = 0.07 + 0.03 * Math.sin(t * 0.5);
+      gr.addColorStop(0, `rgba(13,204,90,${ga})`);
+      gr.addColorStop(1, 'rgba(13,204,90,0)');
+      ctx.fillStyle = gr; ctx.fillRect(0, 0, W, H);
+
+      // 좌하단 보조 glow
+      const gr2 = ctx.createRadialGradient(W * 0.08, H * 0.88, 0, W * 0.08, H * 0.88, W * 0.38);
+      const ga2 = 0.04 + 0.02 * Math.sin(t * 0.38 + 1.2);
+      gr2.addColorStop(0, `rgba(13,204,90,${ga2})`);
+      gr2.addColorStop(1, 'rgba(13,204,90,0)');
+      ctx.fillStyle = gr2; ctx.fillRect(0, 0, W, H);
+
+      // 파티클
+      pts.forEach(p => {
+        p.ph += 0.01;
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+        const a = 0.15 + 0.2 * Math.sin(p.ph);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(13,204,90,${a})`;
+        ctx.fill();
+      });
+
+      // 연결선
+      for (let i = 0; i < pts.length; i++) {
+        for (let j = i + 1; j < pts.length; j++) {
+          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < 110) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(13,204,90,${0.07 * (1 - d / 110)})`;
+            ctx.lineWidth = 0.5;
+            ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      rafID = requestAnimationFrame(drawGreen);
+    }
+    drawGreen();
+
+  } else if (theme === 'dark-neon') {
     /* dark-neon: 새싹 파티클 네트워크 — 딥 포레스트 위 연두빛 별빛 */
     const pts = Array.from({ length: 65 }, () => ({
       x: Math.random() * W, y: Math.random() * H,
